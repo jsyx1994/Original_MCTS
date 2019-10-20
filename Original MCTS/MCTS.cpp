@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 #include <string.h>
 #include <cstdlib>
@@ -403,6 +403,7 @@ inline coordinate Bot::Decide(MctsNode* root)
             bestchild = r;
         }
     }
+    cout << bestchild->getVisit() << endl;
     return bestchild->getPrevAction();
 }
 
@@ -666,3 +667,4 @@ int main()
     
     return 0;
 }
+*/

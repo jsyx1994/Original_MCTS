@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <string>
 #include <string.h>
 #include <cstdlib>
@@ -176,7 +176,7 @@ inline double MctsNode::getWeight()
     {
         double aveReward = reward/visitTime; //#待考
         double totalVisit = parent->visitTime;
-        double entropy = this->getEntropy();
+        //double entropy = this->getEntropy();
         double weight = aveReward + sqrt(log(totalVisit/visitTime)); //替换为entropy
         return weight;
     }
@@ -345,7 +345,7 @@ inline void Bot::simulate(MctsNode* workingNode)
     int simuColor = workingNode->getColor();
     while (!gameEnded(simuNode))
     {
-        int threashold = 200;
+        int threashold = 256;
         int simuX,simuY;
         while (threashold-- )
         {
@@ -413,6 +413,7 @@ inline coordinate Bot::Decide(MctsNode* root)
             bestchild = r;
         }
     }
+    cout << bestchild->getVisit();
     return bestchild->getPrevAction();
 }
 
@@ -677,4 +678,4 @@ int main()
     
     return 0;
 }
-*/
+
